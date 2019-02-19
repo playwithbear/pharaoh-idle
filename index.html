@@ -10,8 +10,8 @@
 
     <script type="text/javascript" src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -48,46 +48,51 @@
         </nav>
     </header>
     <main id="game-board">
-        <div id="scores">
-            <div id="score-slaves" class="score-box">
-                <p>Slaves:</p>
-            </div>
-            <div id="score-gold" class="score-box">
-                <p>Gold:</p>
-            </div>
-            <div id="score-cats" class="score-box">
-                <p>Cats:</p>
-            </div>
-            <div id="score-gems" class="score-box">
-                <p>Gems:</p>
-            </div>
+      <div onload="setVars()">
+        <h1>Pharaoh Idle</h1>
+        <div>
+          <div id="resource-info">
+            <h2>Resources:</h2>
+            <p id="slaves">Slaves: 0</p>
+            <p id="gold">Gold: 0</p>
+            <p id="ankhs">Ankhs: 0</p>
+            <p id="cats">Cats: 0</p>
+          </div>
+          <div id="game-info">
+            <h2>Game info:</h2>
+            <p>Placeholder</p>
+            <p>Placeholder</p>
+            <p>Placeholder</p>
+            <p>Placeholder</p>
+          </div>
         </div>
-        <div id="game-area">
-            <button class="tablink" onclick="openCity('London', this)" id="defaultOpen" style="background-color:#777">Thoth</button>
-            <button class="tablink" onclick="openCity('Paris', this)">Amon-Ra</button>
-            <button class="tablink" onclick="openCity('Tokyo', this)">Seshat</button>
-            <button class="tablink" onclick="openCity('Oslo', this)">Anubis</button>
-    
-            <div id="London" class="tabcontent" style="display:block">
-                <h1>London</h1>
-                <p>London is the capital city of England.</p>
-                </div>
-                
-                <div id="Paris" class="tabcontent">
-                <h1>Paris</h1>
-                <p>Paris is the capital of France.</p> 
-                </div>
-                
-                <div id="Tokyo" class="tabcontent">
-                <h1>Tokyo</h1>
-                <p>Tokyo is the capital of Japan.</p>
-                </div>
-                
-                <div id="Oslo" class="tabcontent">
-                <h1>Oslo</h1>
-                <p>Oslo is the capital of Norway.</p>
-                </div>
+        <div class="float-clear">
+          <div>
+            <h3>Thoth</h3>
+            <div class="jobSection">
+              <p id="scribes" class="job">Scribes: 1</p>
+              <p class="jobDescription">Produces 1 gold/tick</p>
+              <button id="scribeWorkBtn" onClick="workScribe()">Work</button>
+              <button id="scribeBuyBtn" onClick="buyScribe()">Buy 1 (10 gold and 1 slave)</button>
+              <button onclick="autoScribes()" id="scribeAutomateBtn">Automate (100 gold)</button>
+            </div>
+            <div class="jobSection">
+              <p id="scribeSchool" class="job">Scribe Schools: 0</p>
+              <p class="jobDescription">Produces 10 gold/tick</p>
+              <button id="scribeSchoolWorkBtn" onClick="workScribeSchool()">Work</button>
+              <button id="scribeSchoolBuyBtn" onClick="buyScribeSchool()">Buy 1 (100 gold and 5 slaves)</button>
+              <button onclick="autoScribeSchool()" id="scribeSchoolAutomateBtn">Automate (10,000 gold)</button>
+            </div>
+            <div class="jobSection">
+              <p id="library" class="job">Libraries: 0</p>
+              <p class="jobDescription">Produces 125 gold/tick</p>
+              <button id="libraryWorkBtn" onClick="workLibrary()">Work</button>
+              <button id="libraryBuyBtn" onClick="buyLibrary()">Buy 1 (1,000 gold and 20 slaves)</button>
+              <button onclick="autoLibrary()" id="libraryAutomateBtn">Automate (1 million gold)</button>              
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 </body>
 </html>

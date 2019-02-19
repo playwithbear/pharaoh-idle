@@ -1,8 +1,9 @@
-# pharaoh-idle
+# Pharaoh Idle 
+*Current release: v0.1*
 
 ## Change Log
 
-v0.1 - 2019-02-2019 - Initial commit, creating repository and ability to fork for development.
+**v0.1** - 2019-02-2019 - Initial commit, creating repository and ability to fork for development.
                     - Changed format from a machines-build-machines structure to individual but more powerful machines (see notes below).
 
 ## Ideas and Tasks

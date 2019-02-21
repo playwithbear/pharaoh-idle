@@ -19,7 +19,7 @@ function testVariables() {
                 TOGGLE TEST VARIABLES
     ############################################# */
 
-//testVariables(); // <--- UNCOMMENT FOR TESTING
+testVariables(); // <--- UNCOMMENT FOR TESTING
 
 var tickLength = 2000;
 

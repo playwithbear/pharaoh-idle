@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pharaoh Idle</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <script type="text/javascript" src="js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pharaoh Idle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+
+  <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <header>
+    <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -45,54 +51,84 @@
                 </li>
               </ul>
             </div>
-        </nav>
-    </header>
-    <main id="game-board">
-      <div onload="setVars()">
-        <h1>Pharaoh Idle</h1>
-        <div>
-          <div id="resource-info">
-            <h2>Resources:</h2>
-            <p id="slaves">Slaves: 0</p>
-            <p id="gold">Gold: 0</p>
-            <p id="ankhs">Ankhs: 0</p>
-            <p id="cats">Cats: 0</p>
+        </nav>-->
+  </header>
+  <main id="game-board">
+    <div onload="setVars()">
+      <h1>Pharaoh Idle</h1>
+      <div>
+        <div id="resource-info">
+          <h2>Resources:</h2>
+          <p id="slaves">Slaves: 0</p>
+          <p id="gold">Gold: 0</p>
+          <p id="ankhs">Ankhs: 0</p>
+          <p id="cats">Cats: 0</p>
+        </div>
+        <div id="game-info">
+          <h2>Game info:</h2>
+          <p>Placeholder</p>
+          <p>Placeholder</p>
+          <p>Placeholder</p>
+          <p>Placeholder</p>
+        </div>
+      </div>
+      <div class="float-clear"></div>
+      <div id="game-grid">
+
+        <!-- Thoth Section -->
+        <div id="thothSection" class="godSection">
+          <h3>Thoth</h3>
+          <div class="jobSection">
+            <p id="scribes" class="job">Scribes: 1</p>
+            <p class="jobDescription">Produces 1 gold/tick</p>
+            <button id="scribeWorkBtn" onClick="workScribe()">Work</button>
+            <button id="scribeBuyBtn" onClick="buyScribe()">Buy 1 (10 gold and 1 slave)</button>
+            <button onclick="autoScribes()" id="scribeAutomateBtn">Automate (100 gold)</button>
           </div>
-          <div id="game-info">
-            <h2>Game info:</h2>
-            <p>Placeholder</p>
-            <p>Placeholder</p>
-            <p>Placeholder</p>
-            <p>Placeholder</p>
+          <div class="jobSection">
+            <p id="scribeSchool" class="job">Scribe Schools: 0</p>
+            <p class="jobDescription">Produces 10 gold/tick</p>
+            <button id="scribeSchoolWorkBtn" onClick="workScribeSchool()">Work</button>
+            <button id="scribeSchoolBuyBtn" onClick="buyScribeSchool()">Buy 1 (100 gold and 5 slaves)</button>
+            <button onclick="autoScribeSchool()" id="scribeSchoolAutomateBtn">Automate (10,000 gold)</button>
+          </div>
+          <div class="jobSection">
+            <p id="library" class="job">Libraries: 0</p>
+            <p class="jobDescription">Produces 125 gold/tick</p>
+            <button id="libraryWorkBtn" onClick="workLibrary()">Work</button>
+            <button id="libraryBuyBtn" onClick="buyLibrary()">Buy 1 (1,000 gold and 20 slaves)</button>
+            <button onclick="autoLibrary()" id="libraryAutomateBtn">Automate (1 million gold)</button>
           </div>
         </div>
-        <div class="float-clear">
-          <div>
-            <h3>Thoth</h3>
-            <div class="jobSection">
-              <p id="scribes" class="job">Scribes: 1</p>
-              <p class="jobDescription">Produces 1 gold/tick</p>
-              <button id="scribeWorkBtn" onClick="workScribe()">Work</button>
-              <button id="scribeBuyBtn" onClick="buyScribe()">Buy 1 (10 gold and 1 slave)</button>
-              <button onclick="autoScribes()" id="scribeAutomateBtn">Automate (100 gold)</button>
-            </div>
-            <div class="jobSection">
-              <p id="scribeSchool" class="job">Scribe Schools: 0</p>
-              <p class="jobDescription">Produces 10 gold/tick</p>
-              <button id="scribeSchoolWorkBtn" onClick="workScribeSchool()">Work</button>
-              <button id="scribeSchoolBuyBtn" onClick="buyScribeSchool()">Buy 1 (100 gold and 5 slaves)</button>
-              <button onclick="autoScribeSchool()" id="scribeSchoolAutomateBtn">Automate (10,000 gold)</button>
-            </div>
-            <div class="jobSection">
-              <p id="library" class="job">Libraries: 0</p>
-              <p class="jobDescription">Produces 125 gold/tick</p>
-              <button id="libraryWorkBtn" onClick="workLibrary()">Work</button>
-              <button id="libraryBuyBtn" onClick="buyLibrary()">Buy 1 (1,000 gold and 20 slaves)</button>
-              <button onclick="autoLibrary()" id="libraryAutomateBtn">Automate (1 million gold)</button>              
-            </div>
+
+        <!-- Amon-Ra Section -->
+        <div id="amonRaSection" class="godSection">
+          <h3>Amon-Ra</h3>
+          <div class="jobSection">
+            <p id="priests" class="job">Priests: 0</p>
+            <p class="jobDescription">Produces 1 ankh/tick</p>
+            <button id="priestsWorkBtn" onClick="workPriests()">Work</button>
+            <button id="priestsBuyBtn" onClick="buyPriests()">Buy 1 (500 gold and 15 slaves)</button>
+            <button onclick="autoPriests()" id="priestsAutomateBtn">Automate (100,000 gold)</button>
+          </div>
+          <div class="jobSection">
+            <p id="temples" class="job">Temples: 0</p>
+            <p class="jobDescription">Produces 20 ankhs/tick</p>
+            <button id="templesWorkBtn" onClick="workTemples()">Work</button>
+            <button id="templesBuyBtn" onClick="buyTemples()">Buy 1 (1,000 gold and 25 slaves)</button>
+            <button onclick="autoTemples()" id="templesAutomateBtn">Automate (10 million gold)</button>
+          </div>
+          <div class="jobSection">
+            <p id="festivals" class="job">Festivals: 0</p>
+            <p class="jobDescription">Produces 100 ankhs/tick</p>
+            <button id="festivalsWorkBtn" onClick="workFestivals()">Work</button>
+            <button id="festivalsBuyBtn" onClick="buyFestivals()">Buy 1 (2,500 gold and 50 slaves)</button>
+            <button onclick="autoFestivals()" id="festivalsAutomateBtn">Automate (10 billion gold)</button>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 </body>
+
 </html>

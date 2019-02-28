@@ -1,11 +1,14 @@
 # Pharaoh Idle 
-*Current release: v0.1*
+*Current release: v0.2*
 
 ## Change Log
-**v0.2** - 2019-02-28   - Sectioned 'God branches' into columns (CSS Grid)
-                        - Added Amon-Ra branch
-**v0.1** - 2019-02-20   - Initial commit, creating repository and ability to fork for development.
-                        - Changed format from a machines-build-machines structure to individual but more powerful machines (see notes below).
+**v0.2** - 2019-02-28
+- Sectioned 'God branches' into columns (CSS Grid).  
+- Added Amon-Ra branch.    
+
+**v0.1** - 2019-02-20   
+- Initial commit, creating repository and ability to fork for development.  
+- Changed format from a machines-build-machines structure to individual but more powerful machines (see notes below).  
                     
 ## Ideas and Tasks
 

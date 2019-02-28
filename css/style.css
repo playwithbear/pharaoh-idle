@@ -2,7 +2,7 @@
     font-style: italic;
     font-size: 0.8em;
 }
-  
+
 .job {
     background-color: lightblue;
     padding: 10px;
@@ -40,4 +40,13 @@
     width: 90%;
     margin: auto;
     padding-top: 20px;
+}
+
+#game-board h3 {
+    text-align: center;
+}
+
+#game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }

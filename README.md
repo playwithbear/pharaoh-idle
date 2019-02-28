@@ -1,8 +1,9 @@
 # pharaoh-idle
 
 ## Change Log
-
-v0.1 - 2019-02-2019 - Initial commit, creating repository and ability to fork for development.
+v0.2 - 2019-02-28   - Sectioned 'God branches' into columns (CSS Grid)
+                    - Added Amon-Ra branch
+v0.1 - 2019-02-20   - Initial commit, creating repository and ability to fork for development.
                     - Changed format from a machines-build-machines structure to individual but more powerful machines (see notes below).
 
 ## Ideas and Tasks
@@ -36,13 +37,13 @@ Ankhs are used to purchase permanent upgrades for a variety of things, in the sa
 - [ ] Add an advancement system, which speeds up Slave production and/or tick-speed based on certain triggers
 - [ ] Add a game-save and game-load option
 - [ ] Format numbers so that they scale better as they get larger (commas for 000s, and also exponent styling/abbreviation i.e. m, bn, tn, qu etc...)
-- [ ] Display god branches in columns
+- [x] Display god branches in columns
 
 #### Thoth to-do
 - [ ] Add god functionality
 
 #### Amun-Ra to-do
-- [ ] Add machines
+- [x] Add machines
 - [ ] Add god functionality
 
 #### Seshet to-do

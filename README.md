@@ -4,6 +4,7 @@
 ## Change Log
 **v0.3** - {DATE}
 - Added advancement system (see notes below for progress).
+- Created ADVANCEMENTS.md to outline what the advancements are and how they work.
 
 **v0.2** - 2019-02-28
 - Sectioned 'God branches' into columns (CSS Grid).  
@@ -38,7 +39,7 @@ Ankhs are used to purchase permanent upgrades for a variety of things, in the sa
 
 
 ### General to-do list
-- [ ] Create a multiplier MD, to explain what all of the multipliers are, and how they are used in the code.
+- [x] Create an advancement/multiplier MD, to explain what all of the multipliers are, and how they are used in the code.
 - [ ] Add a slave/second, gold/second and ankhs/second
 - [ ] Add seconds (ms) per tick display in one of placeholder locations
 - [x] Add an advancement system, which speeds up Slave production and/or tick-speed based on certain triggers

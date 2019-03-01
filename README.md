@@ -49,7 +49,7 @@ Ankhs are used to purchase permanent upgrades for a variety of things, in the sa
 
 #### Advancement system
 - [x] Click Work Advancement System
-- [ ] Number of machines advancements (for each machine! I hope there is an easy way to do this...)
+- [ ] Number of machines advancements
 - [ ] Display advancement messages in an obvious but not obnoxious way
 - [ ] Total Gold amount advancement
 - [ ] Total Ankhs advancement

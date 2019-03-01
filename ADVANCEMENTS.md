@@ -16,7 +16,12 @@ This advancement triggers based on the number of times you've clicked any of the
 The advancement levels are based on an exponents of 10, so you gain rewards at 10, 100, 1,000 etc.
 
 ### Items Owned (for each machine type)
+**Key variable:** depends on each item. Scribes is 'scribes'
+**Affected stat:** Production/tick
 
+This is a more experimental one as I have a feeling it may accelerate the game beyond what is reasonable.
+
+Will trigger a 2x multiplier at each of the following ownership levels: 32, 64, 128 etc. (basically an exponent of 2, starting at 2^5)
 
 ### Total earned resources (Gold and Ankhs)
 

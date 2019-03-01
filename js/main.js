@@ -25,31 +25,37 @@ let tickLength = 2000;
 let scribesBought = 1; // Separated by bought and Anubis to manage cost of element. Cost of upgrade is based on actual purchases, not free ones.
 let scribesAnubis = 0;
 let scribes = scribesBought + scribesAnubis;
+let scribesAdvancementLevel = 0;
 let costScribe = 10;
 let isAutoScribe = false;
 
 let scribeSchoolBought = 0;
 let scribeSchoolAnubis = 0;
 let scribeSchool = scribeSchoolBought + scribeSchoolAnubis;
+let scribeSchoolAdvancementLevel = 0;
 let costScribeSchool = 100;
 let isAutoScribeSchool = false;
 
 let libraryBought = 0;
 let libraryAnubis = 0;
 let library = libraryBought + libraryAnubis;
+let libraryAdvancementLevel = 0;
 let costLibrary = 1000;
 let isAutoLibrary = false;
 
 // AMON-RA VARIABLES
 let priests = 0;
+let priestsAdvancementLevel = 0;
 let costPriests = 500;
 let isAutoPriests = false;
 
 let temples = 0;
+let templesAdvancementLevel = 0;
 let costTemples = 1000;
 let isAutoTemples = false;
 
 let festivals = 0;
+let festivalsAdvancementLevel = 0;
 let costFestivals = 2500;
 let isAutoFestivals = false;
 
@@ -130,6 +136,12 @@ function updateTotalMachines() {
 // Test advancements (i.e. run each advancement test function)
 function checkAdvancements() {
   workAdvancement();
+  machinesOwnedAdvancement(scribes, scribesAdvancementLevel);
+  machinesOwnedAdvancement(scribeSchool, scribesAdvancementLevel);
+  machinesOwnedAdvancement(library, libraryAdvancementLevel);
+  machinesOwnedAdvancement(priests, priestsAdvancementLevel);
+  machinesOwnedAdvancement(temples, templesAdvancementLevel);
+  machinesOwnedAdvancement(festivals, festivalsAdvancementLevel);
 }
 
 /* =============================
@@ -149,9 +161,23 @@ function workAdvancement() {
 }
 
 // Makes sure they own the item before the work clicking stat is counted (not that you would click work on a machine you don't own mind...)
-function clickWorkCheckOwned(x) {
-  if (x > 0) {
+function clickWorkCheckOwned(machine) {
+  if (machine > 0) {
     clickWorkTotal += 1;
+  }
+}
+
+/* ==========================
+   Machines Owned Advancement
+   ========================== */
+
+// Checks number of machines owned. This function takes in arguments specific to the machine in question. First, number of machines owned; then its advancement level.
+function machinesOwnedAdvancement(machine,machineLevel) {
+  if (machine >= Math.pow(2,(machineLevel+5))) {
+    console.log(machineLevel);
+    machineLevel += 1;
+    console.log("Machine is upgraded. It is now level: " + machineLevel);
+    // NB NOT WORKING. AWAITING RESPONSE ON STACK OVERFLOW...
   }
 }
 
@@ -167,7 +193,7 @@ function clickWorkCheckOwned(x) {
 
 // Scribe generates gold
 function workScribe() {
-  gold += 1 * scribes;
+  gold += 1 * scribes * Math.pow(2,scribesAdvancementLevel); // BASE PRODUCTION x NUMBER OF MACHINES x MACHINE MULTIPLIER (starts at 2^0, i.e. 1)
   clickWorkCheckOwned(scribes);
   update();
 }

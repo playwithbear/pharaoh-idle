@@ -2,6 +2,9 @@
 *Current release: v0.2*
 
 ## Change Log
+**v0.3** - {DATE}
+- Added advancement system (see notes below for progress).
+
 **v0.2** - 2019-02-28
 - Sectioned 'God branches' into columns (CSS Grid).  
 - Added Amon-Ra branch.    
@@ -38,10 +41,19 @@ Ankhs are used to purchase permanent upgrades for a variety of things, in the sa
 - [ ] Create a multiplier MD, to explain what all of the multipliers are, and how they are used in the code.
 - [ ] Add a slave/second, gold/second and ankhs/second
 - [ ] Add seconds (ms) per tick display in one of placeholder locations
-- [ ] Add an advancement system, which speeds up Slave production and/or tick-speed based on certain triggers
-- [ ] Add a game-save and game-load option
+- [x] Add an advancement system, which speeds up Slave production and/or tick-speed based on certain triggers
+- [ ] **Add a game-save and game-load option**
 - [ ] Format numbers so that they scale better as they get larger (commas for 000s, and also exponent styling/abbreviation i.e. m, bn, tn, qu etc...)
 - [x] Display god branches in columns
+
+#### Advancement system
+- [x] Click Work Advancement System
+- [ ] Number of machines advancements (for each machine! I hope there is an easy way to do this...)
+- [ ] Display advancement messages in an obvious but not obnoxious way
+- [ ] Total Gold amount advancement
+- [ ] Total Ankhs advancement
+- [ ] Cat generation...
+- [ ] Amulets (another sub-section entirely I expect)
 
 #### Thoth to-do
 - [ ] Add god functionality

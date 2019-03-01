@@ -14,7 +14,7 @@ let ankhs = 0;
     ===================== */
 
 function testVariables() {
-  slaves=gold=cats=ankhs = 1000000000000000;
+  slaves = gold = cats = ankhs = 1000000000000000; // YAY! Cheaty money :-D
 }
 
 //testVariables(); // <--- UNCOMMENT FOR TESTING
@@ -56,33 +56,35 @@ let isAutoFestivals = false;
 
 // Setting the timer to run, and what to run every tick
 function timer() {
+  checkAdvancements();
+
   slaves += 1 * slaveMultiplier;
-  // Auto Scribes (if enabled)
+
+  // Auto working
   if (isAutoScribe === true) {
     workScribe();
   }
-  // Auto Scribe School (if enabled)
+
   if (isAutoScribeSchool === true) {
     workScribeSchool();
   }
 
-  // Auto Library (if enabled)
   if (isAutoLibrary === true) {
     workLibrary();
   }
-  // Auto Priests (if enabled)
+
   if (isAutoPriests === true) {
     workPriests();
   }
-  // Auto Temples (if enabled)
+
   if (isAutoTemples === true) {
     workTemples();
   }
 
-  // Auto Festivals (if enabled)
   if (isAutoFestivals === true) {
     workFestivals();
   }
+
   //console.log(slaves);
   update();
 }
@@ -120,9 +122,42 @@ function updateTotalMachines() {
 }
 
 /*
+######################
+#    ADVANCEMENTS    #
+######################
+*/
+
+// Test advancements (i.e. run each advancement test function)
+function checkAdvancements() {
+  workAdvancement();
+}
+
+/* =============================
+   Click Work Button Advancement
+   ============================= */
+
+let clickWorkTotal = 0;
+let workAdvancementLevel = 0;
+
+function workAdvancement() {
+  if (clickWorkTotal >= Math.pow(10, (workAdvancementLevel + 1))) {
+    // To do: Display advancement message
+    workAdvancementLevel += 1;
+    slaveMultiplier *= 2;
+    console.log("Click Work Advancement. You are now level: " + workAdvancementLevel)
+  }
+}
+
+// Makes sure they own the item before the work clicking stat is counted (not that you would click work on a machine you don't own mind...)
+function clickWorkCheckOwned(x) {
+  if (x > 0) {
+    clickWorkTotal += 1;
+  }
+}
+
+/*
 #########################
 # Thoth chain functions #
-#   Separate JS file?   #
 #########################
 */
 
@@ -133,6 +168,7 @@ function updateTotalMachines() {
 // Scribe generates gold
 function workScribe() {
   gold += 1 * scribes;
+  clickWorkCheckOwned(scribes);
   update();
 }
 
@@ -171,6 +207,7 @@ function autoScribes() {
 // Scribe School generates gold
 function workScribeSchool() {
   gold += 10 * scribeSchool;
+  clickWorkCheckOwned(scribeSchool);
   update();
 }
 
@@ -209,6 +246,7 @@ function autoScribeSchool() {
 // Library generates gold
 function workLibrary() {
   gold += 125 * library;
+  clickWorkCheckOwned(library);
   update();
 }
 
@@ -243,7 +281,6 @@ function autoLibrary() {
 /*
 ###########################
 # Amon-Ra chain functions #
-#    Separate JS file?    #
 ###########################
 */
 
@@ -254,6 +291,7 @@ function autoLibrary() {
 // Priest generates ankhs
 function workPriests() {
   ankhs += 1 * priests;
+  clickWorkCheckOwned(priests);
   update();
 }
 
@@ -292,6 +330,7 @@ function autoPriests() {
 // Temples generates ankhs
 function workTemples() {
   ankhs += 20 * temples;
+  clickWorkCheckOwned(temples);
   update();
 }
 
@@ -330,6 +369,7 @@ function autoTemples() {
 // Festivals generate Ankhs
 function workFestivals() {
   ankhs += 100 * festivals;
+  clickWorkCheckOwned(festivals);
   update();
 }
 
